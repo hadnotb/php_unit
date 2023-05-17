@@ -31,3 +31,11 @@ docker-down: ## down the stack
 
 docker-sh: ## Connect to the docker container
 	$(DOCKER) exec -it api zsh
+
+make-test: ## lauch phpUnit test
+	 symfony php bin/phpunit
+
+migrate: ## create migrate +migrate
+
+	symfony console make:migration
+	symfony console d:m:m
